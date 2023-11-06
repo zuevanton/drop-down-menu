@@ -1,19 +1,20 @@
-import data from "../data.json"
+// import data from "../data.json"
 import MenuItem from "./menuItem"
 
-const SubMenu = ({ids}) => {
+const SubMenu = ({ids, entities}) => {
 
   return (
     <ul>
       {
         ids.map(id => {
-          console.log(data.entities.pages[id])
-          const {title, url, pages} = data.entities.pages[id]
+          
+          const {title, url, pages} = entities.pages[id]
           return <MenuItem 
             key={id}
             url={url}
             title={title}
-            pages={pages} />
+            pages={pages}
+            entities={entities} />
         })
       }
     </ul>
